@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqhwd2q34lxmm"]
+
+[ext_resource type="PackedScene" uid="uid://c6lhmb3q0rmrm" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dwvfb6j38u1jy" path="res://assets/ground_texture.png" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://brwjq8fs1ekpt" path="res://scenes/mob.tscn" id="3_sugp2"]
+
+[node name="main" type="Node2D"]
+scale = Vector2(0.6, 0.6)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1535, 1020)
+
+[node name="GroundTexture" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_sugp2")
+
+[node name="Mob" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(379, 598)
+platform_floor_layers = 4294967041
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+collision_layer = 254
