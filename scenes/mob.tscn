@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://brwjq8fs1ekpt"]
+
+[ext_resource type="Script" uid="uid://bw0govtbfwllc" path="res://scripts/mob.gd" id="1_4are2"]
+[ext_resource type="Texture2D" uid="uid://du7ikf20wdfew" path="res://assets/undead.png" id="2_bsing"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlwmu"]
+size = Vector2(162, 175.125)
+
+[node name="Mob" type="CharacterBody2D"]
+script = ExtResource("1_4are2")
+
+[node name="Undead" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_bsing")
+
+[node name="MobCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -0.4375)
+shape = SubResource("RectangleShape2D_rlwmu")
