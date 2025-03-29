@@ -10,8 +10,8 @@ func _physics_process(delta) -> void:
 	move_and_slide()
 
 func take_damage(amount) -> void:
-	print("Enemy took ", amount, " damage")
+	print("Mob took ", amount, " damage")
 	health -= amount
 	if health <= 0:
-		print("Enemy dead")
+		print("Mob dead")
 		queue_free()

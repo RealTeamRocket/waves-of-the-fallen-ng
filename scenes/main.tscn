@@ -26,4 +26,3 @@ platform_floor_layers = 4294967041
 collision_layer = 254
 
 [node name="SpawnTimer" type="Timer" parent="."]
-autostart = true

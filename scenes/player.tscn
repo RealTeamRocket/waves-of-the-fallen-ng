@@ -25,8 +25,8 @@ shape = SubResource("RectangleShape2D_660ry")
 [node name="Sword" type="Area2D" parent="."]
 position = Vector2(50, 0)
 scale = Vector2(3, 3)
-collision_layer = 2
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 
 [node name="SwordCollision" type="CollisionShape2D" parent="Sword"]
 position = Vector2(47.3333, 0.666667)

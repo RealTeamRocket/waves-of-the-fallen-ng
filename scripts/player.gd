@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 350
 @export var attack_cooldown = 1.0
+
 @onready var sword = $Sword
 @onready var timer = $AttackTimer
 
@@ -20,11 +21,12 @@ func _physics_process(delta) -> void:
 func _on_Sword_body_entered(body) -> void:
 	if body.name == "Mob":
 		print("Sword hit: ", body.name)
-		if body.has_method("take_damage"):
-			body.take_damage(3)
+		for mob in sword.get_overlapping_bodies():
+			if mob.has_method("take_damage"):
+				mob.take_damage(3)
 
 func _on_attack_timer_timeout() -> void:
 	# print("Attack at:", Time.get_ticks_msec())
 	sword.monitoring = true
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.5).timeout
 	sword.monitoring = false
